@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::view('/cardetails','ui\screens\cardetails');
+Route::view('/contact','ui\screens\contactpage');
+Route::view('/homepage','ui\screens\homepage');
+Route::view('/service','ui\screens\service');
+Route::view('/about','ui\screens\about');
+Route::view('/bike','ui\screens\bikes');
